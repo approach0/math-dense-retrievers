@@ -106,6 +106,8 @@ $SEARCH search_ntcir12_dpr --device cpu
 
 (since the DPR searcher only needs to encode queries, feel free to only use CPU device this time)
 
+The pre-existing run files under `experiments/runs` directory are what we have generated for reporting our results. Be aware that, by default, all newly generated run files will overwrite files under the `experiments/runs` directory.
+
 ### Evaluation
 
 #### Regular evaluation
@@ -148,8 +150,6 @@ python -m pya0.judge_rate topics-and-qrels/qrels.arqmath-2021-task1-official.txt
 System nDCG' mAP' p@10 BPref Judge
 search_arqmath2_dpr_run 0.2700 0.0869 0.1521 0.0972 66.3
 ```
-
-The pre-existing run files under that directory are what we have generated for reporting our results. Be aware that, by default, all newly generated run files will overwrite files under the `experiments/runs` directory.
 
 #### ARQMath topic breakdown
 
