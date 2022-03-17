@@ -108,6 +108,8 @@ $SEARCH search_ntcir12_dpr --device cpu
 
 ### Evaluation
 
+#### Regular evaluation
+
 For NTCIR-12 run files, evaluate them by:
 
 ```shell
@@ -148,3 +150,29 @@ search_arqmath2_dpr_run 0.2700 0.0869 0.1521 0.0972 66.3
 ```
 
 The pre-existing run files under that directory are what we have generated for reporting our results. Be aware that, by default, all newly generated run files will overwrite files under the `experiments/runs` directory.
+
+#### ARQMath topic breakdown
+
+You can also break down a ARQMath run file by topic categlories:
+
+```shell
+./eval-arqmath2-task1/preprocess.sh filter ../../experiments/runs/search_arqmath2_dpr.run
+./eval-arqmath2-task1/eval.sh --nojudge
+# (Omitting some output here)
+System nDCG' mAP' p@10 BPref Judge
+search_arqmath2_dpr_run-Difficulty-Medium 0.2886 0.0850 0.1350 0.0897 0.0
+search_arqmath2_dpr_run 0.2700 0.0869 0.1521 0.0972 0.0
+search_arqmath2_dpr_run-Dependency-Formula 0.2406 0.0629 0.1238 0.0796 0.0
+search_arqmath2_dpr_run-Dependency-Both 0.2835 0.0956 0.1625 0.1022 0.0
+search_arqmath2_dpr_run-Category-Calculation 0.2785 0.1098 0.1840 0.1194 0.0
+search_arqmath2_dpr_run-Difficulty-High 0.2436 0.0782 0.1421 0.0758 0.0
+search_arqmath2_dpr_run-Category-Proof 0.2641 0.0683 0.1222 0.0746 0.0
+search_arqmath2_dpr_run-Dependency-Text 0.2780 0.1022 0.1700 0.1143 0.0
+search_arqmath2_dpr_run-Category-Concept 0.2673 0.0831 0.1526 0.1001 0.0
+search_arqmath2_dpr_run-Difficulty-Low 0.2741 0.0932 0.1687 0.1146 0.0
+
+```
+
+#### For reranking and fusion (w/ cross validation)
+
+For how to invoke other evaluation scripts, please refer to the `experiments/dense_retriever.sh` file.
