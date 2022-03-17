@@ -29,7 +29,7 @@ mkdir prebuilt-indexes
 
 ### Get Source Code
 
-Download the pya0 build (source code can be found [here]([GitHub - approach0/pya0 at math-dense-retrievers-replication](https://github.com/approach0/pya0/tree/math-dense-retrievers-replication))) and our pyserini fork which are used to replicate our results:
+Download the pya0 build (source code can be found [here](https://github.com/approach0/pya0/tree/math-dense-retrievers-replication)) and our pyserini fork which are used to replicate our results:
 
 ```shell
 pip install pya0==0.3.4
@@ -126,7 +126,7 @@ P_20                    all     0.2400
 bpref                   all     0.4269
 ```
 
-For ARQMath-2 run files, evaluate them by our utility scripts (which internally invokes the [official evaluation script]([ARQMath-2 – Google Drive](https://drive.google.com/drive/folders/15uIdGFo7MPK3IdkpMG2emnwpOdzuNwbN?usp=sharing)) but adds new statistics like BPref score and Judge Rate):
+For ARQMath-2 run files, evaluate them by our utility scripts (which internally invokes the [official evaluation script](https://drive.google.com/drive/folders/15uIdGFo7MPK3IdkpMG2emnwpOdzuNwbN?usp=sharing) but adds new statistics like BPref score and Judge Rate):
 
 ```shell
 ./eval-arqmath2-task1/preprocess.sh cleanup
