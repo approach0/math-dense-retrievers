@@ -153,7 +153,7 @@ search_arqmath2_dpr_run 0.2700 0.0869 0.1521 0.0972 66.3
 
 #### ARQMath topic breakdown
 
-You can also break down a ARQMath run file by topic categlories:
+You can also break down a ARQMath run file by topic categories:
 
 ```shell
 ./eval-arqmath2-task1/preprocess.sh filter ../../experiments/runs/search_arqmath2_dpr.run
