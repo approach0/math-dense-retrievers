@@ -173,6 +173,6 @@ search_arqmath2_dpr_run-Difficulty-Low 0.2741 0.0932 0.1687 0.1146 0.0
 
 ```
 
-#### For reranking and fusion (w/ cross validation)
+#### Reranking, fusion (w/ cross validation) etc.
 
 For how to invoke other evaluation scripts, please refer to the `experiments/dense_retriever.sh` file.
