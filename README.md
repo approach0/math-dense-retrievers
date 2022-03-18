@@ -106,7 +106,7 @@ $SEARCH search_ntcir12_dpr --device cpu
 
 (since the DPR searcher only needs to encode queries, feel free to only use CPU device this time)
 
-The pre-existing run files under `experiments/runs` directory are what we have generated for reporting our results. Be aware that, by default, all newly generated run files will overwrite files under the `experiments/runs` directory.
+The pre-existing run files under `experiments/runs` directory are what we have generated for reporting our results. Be aware that, by default, all newly generated run files will overwrite files under the `experiments/runs` directory. Also, for convenience, we put the official run files (can be downloaded [here](https://drive.google.com/drive/folders/1UOT4KwfCPvh4VveU65LFTUceumlnt7YO?usp=sharing)) from previous systems under: `experiments/runs/official`.
 
 ### Evaluation
 
@@ -170,7 +170,6 @@ search_arqmath2_dpr_run-Category-Proof 0.2641 0.0683 0.1222 0.0746 0.0
 search_arqmath2_dpr_run-Dependency-Text 0.2780 0.1022 0.1700 0.1143 0.0
 search_arqmath2_dpr_run-Category-Concept 0.2673 0.0831 0.1526 0.1001 0.0
 search_arqmath2_dpr_run-Difficulty-Low 0.2741 0.0932 0.1687 0.1146 0.0
-
 ```
 
 #### Reranking, fusion (w/ cross validation) etc.
