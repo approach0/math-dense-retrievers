@@ -175,3 +175,7 @@ search_arqmath2_dpr_run-Difficulty-Low 0.2741 0.0932 0.1687 0.1146 0.0
 #### Reranking, fusion (w/ cross validation) etc.
 
 For how to invoke other evaluation scripts, please refer to the `experiments/dense_retriever.sh` file.
+
+### Training
+If you want to train your own models, please refer to [our Slurm script](https://github.com/w32zhong/cc-orchestration/blob/ee299baacfcecf7e992ac305031637e3007efaf5/sbatch-template.sh).
+The script also includes the training parameters as well as training dataset and base models (with NextCloud IDs) for both further pretraining a backbone or finetuning for a DPR/ColBERT model.
