@@ -17,7 +17,8 @@ wget https://vault.cs.uwaterloo.ca/s/q5tFQRf8RwZr7dW/download -O corpus.tar.gz
 Extract tarballs:
 
 ```shell
-tar xzf corpus.tar.gz experiments.tar.gz
+tar xzf corpus.tar.gz
+tar xzf experiments.tar.gz
 tar xf prebuilt-indexes.tar
 ```
 
