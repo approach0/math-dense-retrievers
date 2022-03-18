@@ -10,7 +10,7 @@ We have made our prebuilt-indexes (optional), experimenting models and corpus fi
 
 ```shell
 wget https://vault.cs.uwaterloo.ca/s/AFTWLbRdKSMBpsK/download -O prebuilt-indexes.tar
-wget https://vault.cs.uwaterloo.ca/s/oDpJ9oHPcpm7dLp/download -O experiments.tar.gz
+wget https://vault.cs.uwaterloo.ca/s/mAiL4AoHqiSWF8R/download -O experiments.tar.gz
 wget https://vault.cs.uwaterloo.ca/s/q5tFQRf8RwZr7dW/download -O corpus.tar.gz
 ```
 
@@ -158,20 +158,21 @@ search_arqmath2_dpr_run 0.2700 0.0869 0.1521 0.0972 66.3
 You can also break down a ARQMath run file by topic categories:
 
 ```shell
+./eval-arqmath2-task1/preprocess.sh cleanup
 ./eval-arqmath2-task1/preprocess.sh filter ../../experiments/runs/search_arqmath2_dpr.run
 ./eval-arqmath2-task1/eval.sh --nojudge
-# (Omitting some output here)
+# (Omitting many outputs here)
 System nDCG' mAP' p@10 BPref Judge
-search_arqmath2_dpr_run-Difficulty-Medium 0.2886 0.0850 0.1350 0.0897 0.0
-search_arqmath2_dpr_run 0.2700 0.0869 0.1521 0.0972 0.0
-search_arqmath2_dpr_run-Dependency-Formula 0.2406 0.0629 0.1238 0.0796 0.0
-search_arqmath2_dpr_run-Dependency-Both 0.2835 0.0956 0.1625 0.1022 0.0
 search_arqmath2_dpr_run-Category-Calculation 0.2785 0.1098 0.1840 0.1194 0.0
-search_arqmath2_dpr_run-Difficulty-High 0.2436 0.0782 0.1421 0.0758 0.0
 search_arqmath2_dpr_run-Category-Proof 0.2641 0.0683 0.1222 0.0746 0.0
-search_arqmath2_dpr_run-Dependency-Text 0.2780 0.1022 0.1700 0.1143 0.0
-search_arqmath2_dpr_run-Category-Concept 0.2673 0.0831 0.1526 0.1001 0.0
 search_arqmath2_dpr_run-Difficulty-Low 0.2741 0.0932 0.1687 0.1146 0.0
+search_arqmath2_dpr_run-Dependency-Formula 0.2406 0.0629 0.1238 0.0796 0.0
+search_arqmath2_dpr_run 0.2700 0.0869 0.1521 0.0972 0.0
+search_arqmath2_dpr_run-Dependency-Both 0.2835 0.0956 0.1625 0.1022 0.0
+search_arqmath2_dpr_run-Category-Concept 0.2673 0.0831 0.1526 0.1001 0.0
+search_arqmath2_dpr_run-Difficulty-Medium 0.2886 0.0850 0.1350 0.0897 0.0
+search_arqmath2_dpr_run-Difficulty-High 0.2436 0.0782 0.1421 0.0758 0.0
+search_arqmath2_dpr_run-Dependency-Text 0.2780 0.1022 0.1700 0.1143 0.0
 ```
 
 #### Reranking, fusion (w/ cross validation) etc.
@@ -181,3 +182,5 @@ For how to invoke other evaluation scripts, please refer to the `experiments/den
 ### Training
 If you want to train your own models, please refer to [our Slurm script](https://github.com/w32zhong/cc-orchestration/blob/ee299baacfcecf7e992ac305031637e3007efaf5/sbatch-template.sh).
 The script also includes the training parameters as well as training dataset and base models (with NextCloud IDs) for both further pretraining a backbone or finetuning for a DPR/ColBERT model.
+
+The training data are preprocessed into pickle files (and sentence pairs if necessary) using [these scripts](https://github.com/approach0/pya0/tree/math-dense-retrievers-replication/utils/dataset-adapter), and our crawled MSE+AoPS raw data (before preprocessing) can be downloaded [here](https://vault.cs.uwaterloo.ca/s/G36Mjt55HWRSNRR).
