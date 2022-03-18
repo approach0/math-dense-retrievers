@@ -35,6 +35,7 @@ Download the pya0 build (source code can be found [here](https://github.com/appr
 ```shell
 pip install pya0==0.3.4
 git clone -b patch-colbert git@github.com:w32zhong/pyserini.git ./code/pyserini
+wget https://vault.cs.uwaterloo.ca/s/Pbni95czxLWGzJm/download -O ./code/pyserini/pyserini/resources/jars/anserini-0.13.4-SNAPSHOT-fatjar.jar
 ```
 
 Download the pya0 source code as well, since it contains the evaluation config file and our experiment script:
