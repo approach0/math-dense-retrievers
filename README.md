@@ -184,7 +184,9 @@ search_arqmath2_dpr_run-Dependency-Text 0.2780 0.1022 0.1700 0.1143 0.0
 For how to invoke other evaluation scripts, please refer to the `experiments/dense_retriever.sh` file.
 
 ### Training
-If you want to train your own models, please refer to [our Slurm script](https://github.com/w32zhong/cc-orchestration/blob/ee299baacfcecf7e992ac305031637e3007efaf5/sbatch-template.sh).
-The script also includes the training parameters as well as training dataset and base models (with NextCloud IDs) for both further pretraining a backbone or finetuning for a DPR/ColBERT model.
+If you want to train your own models, please refer to our Slurm scripts ([1-epoch experiments](https://github.com/w32zhong/cc-orchestration/blob/ee299baacfcecf7e992ac305031637e3007efaf5/sbatch-template.sh#L176-L234), and fully-trained [DPR](https://github.com/w32zhong/cc-orchestration/blob/b799adb3d77cb9a000d92f12c087daef26bf99a7/sbatch-template.sh#L231) or [ColBERT](https://github.com/w32zhong/cc-orchestration/blob/b799adb3d77cb9a000d92f12c087daef26bf99a7/sbatch-template.sh#L189)).
+These scripts include the training parameters as well as training dataset and base model checkpoints (with NextCloud IDs).
+
+For our 1-epoch experiments, you can download the training logs [here](https://vault.cs.uwaterloo.ca/s/wHwJZngDALp4Csc).
 
 The training data are preprocessed into pickle files (and sentence pairs if necessary) using [these scripts](https://github.com/approach0/pya0/tree/math-dense-retrievers-replication/utils/dataset-adapter), and our crawled MSE+AoPS raw data (before preprocessing) can be downloaded [here](https://vault.cs.uwaterloo.ca/s/G36Mjt55HWRSNRR).
