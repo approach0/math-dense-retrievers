@@ -28,6 +28,10 @@ If you want to replicate our prebuilt indexes,  just skip downloading the `prebu
 mkdir prebuilt-indexes
 ```
 
+**Replication Notice**: If you choose to build the indexes by your own (from our checkpoints), there may be slight differences in your replicated evaluation scores.
+This is due to the non-deterministic process of FAISS index building ([more specifically](https://github.com/w32zhong/pyserini/blob/95d5b670739997bf1b32c8cae0f9d2538e3fa187/pyserini/index/_colbert.py#L100)).
+However, these differences should be minor, in practice, they tend to differ in the 3rd decimal point.
+
 ### Get Source Code
 
 Download the pya0 build (source code can be found [here](https://github.com/approach0/pya0/tree/math-dense-retrievers-replication)) and our pyserini fork which are used to replicate our results:
