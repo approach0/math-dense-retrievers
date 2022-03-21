@@ -58,6 +58,41 @@ chmod +x dense_retriever.sh
 
 ### Modify Config Files
 
+After downloading and decompression, your local directory structure should look like:
+```
+ |-code
+ | |-.keep
+ | |-pyserini
+ | |-pya0
+ | |-conda_list.txt
+ |-prebuilt-indexes.tar
+ |-corpus.tar.gz
+ |-corpus
+ | |-arqmath2
+ | |-NTCIR12
+ |-README.md
+ |-experiments.tar.gz
+ |-experiments
+ | |-1ep-experiment
+ | |-math-colbert
+ | |-math-dpr
+ | |-tokenizers
+ | |-runs
+ |-prebuilt-indexes
+ | |-index-DPR-ntcir12
+ | |-index-DPR-ntcir12__3ep_pretrain_1ep
+ | |-index-DPR-arqmath2
+ | |-index-DPR-ntcir12__7ep_pretrain_1ep
+ | |-index-DPR-ntcir12__scibert_1ep
+ | |-index-DPR-ntcir12__vanilla_1ep
+ | |-index-DPR-arqmath2__3ep_pretrain_1ep
+ | |-index-ColBERT-ntcir12
+ | |-index-DPR-arqmath2__7ep_pretrain_1ep
+ | |-index-DPR-arqmath2__scibert_1ep
+ | |-index-DPR-arqmath2__vanilla_1ep
+ | |-index-ColBERT-arqmath2
+```
+
 In the config file `code/pya0/utils/transformer_eval.ini`, change the following path to your current working directory (where this README file locates):
 
 ```ini
