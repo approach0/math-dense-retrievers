@@ -6,6 +6,12 @@ Wei Zhong, Jheng-Hong Yang, and Jimmy Lin. *Evaluating Token-Level and Passage-L
 
 https://arxiv.org/abs/2203.11163v1
 
+### Clone Repository
+```shell
+git clone git@github.com:approach0/math-dense-retrievers.git math-dense-retrievers
+cd math-dense-retrievers
+```
+
 ### Data Download
 
 We have made our prebuilt-indexes (optional), experimenting models and corpus files available for download:
@@ -95,7 +101,7 @@ After downloading and decompression, your local directory structure should look 
  | |-index-ColBERT-arqmath2
 ```
 
-In the config file `code/pya0/utils/transformer_eval.ini`, change the following path to your current working directory (where this README file locates):
+In the config file `code/pya0/utils/transformer_eval.ini`, change the following config variable to your current working directory where this README file locates, for example:
 
 ```ini
 store = /store2/scratch/w32zhong/math-dense-retrievers
