@@ -18,7 +18,8 @@ We have made our prebuilt-indexes (optional), experimenting models and corpus fi
 
 ```shell
 wget https://vault.cs.uwaterloo.ca/s/AFTWLbRdKSMBpsK/download -O prebuilt-indexes.tar
-wget https://vault.cs.uwaterloo.ca/s/mAiL4AoHqiSWF8R/download -O experiments.tar.gz
+# wget https://vault.cs.uwaterloo.ca/s/mAiL4AoHqiSWF8R/download -O experiments.tar.gz # for older version w/o fusion on the NTCIR-12 dataset.
+wget https://vault.cs.uwaterloo.ca/s/B2ywSd9N2jNjGYj/download -O experiments.tar.gz
 wget https://vault.cs.uwaterloo.ca/s/q5tFQRf8RwZr7dW/download -O corpus.tar.gz
 ```
 
