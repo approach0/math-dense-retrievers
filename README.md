@@ -254,8 +254,10 @@ python -m pya0.transformer_utils pft_print ./tests/transformer_unmask.txt > test
 
 Assume this data directory containing all the generated files is named `data.ABC`, an example command for pretraining would be:
 ```sh
+export SLURM_JOB_ID=my_pretrain;
 python ./pya0/utils/transformer.py pretrain \
 	data.ABC/bert-base-uncased data.ABC/bert-tokenizer data.ABC/mse-aops-2021-vocab-v3.pkl \
 	--test_file data.ABC/test.txt --test_cycle 100 --shards_list data.ABC/shards.txt \
-	--batch_size 38 --save_fold 1 --epochs 10 --cluster tcp://127.0.0.1:8912 --dev_map 4,5,6
+	--batch_size $((38 * 3)) --save_fold 1 --epochs 10 \
+	--cluster tcp://127.0.0.1:8912 --dev_map 3,4,5
 ```
