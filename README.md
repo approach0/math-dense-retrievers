@@ -243,14 +243,23 @@ tar xzf mse-aops-2021.tar.gz
 # cd to pya0 directory
 rm -f mse-aops-2021-data-v3.pkl mse-aops-2021-vocab-v3.pkl
 python -m pya0.mse-aops-2021 /path/to/corpus/ --num_tokenizer_ver=3
-python -m pya0.mse-aops-2021-train-data generate_sentpairs --docs_file ./mse-aops-2021-data-v3.pkl
+python -m pya0.mse-aops-2021-train-data generate_sentpairs --docs_file ./mse-aops-2021-data-v3.pkl --condenser_mode=True
 ```
 
 Then, create a `shards.txt` and `test.txt` files to specify the training/testing sentence pairs.
+
+To create `shards.txt`:
+```sh
+ls *.pairs.* > shards.txt
+```
+
 To create `test.txt`:
 ```sh
 python -m pya0.transformer_utils pft_print ./tests/transformer_unmask.txt > test.txt
 ```
+
+You may also need to copy the backbone model/tokenizer (e.g., `bert-base-uncased` and `bert-tokenizer`) to the data directory
+so that an offline training can be performed (useful in some Slurm environments).
 
 Assume this data directory containing all the generated files is named `data.ABC`, an example command for pretraining would be:
 ```sh
