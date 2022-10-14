@@ -153,8 +153,6 @@ SEARCH='python -m pya0.transformer_eval search ./utils/transformer_eval.ini'
 $SEARCH search_ntcir12_dpr --device cpu
 ```
 
-(since the DPR searcher only needs to encode queries, feel free to only use CPU device this time)
-
 The pre-existing run files under `experiments/runs` directory are what we have generated for reporting our results. Be aware that, by default, all newly generated run files will overwrite files under the `experiments/runs` directory. Also, for convenience, we put the official run files (can be downloaded [here](https://drive.google.com/drive/folders/1UOT4KwfCPvh4VveU65LFTUceumlnt7YO?usp=sharing)) from previous systems under: `experiments/runs/official`.
 
 ### Evaluation
@@ -240,9 +238,8 @@ To create training data from [raw data](https://vault.cs.uwaterloo.ca/s/G36Mjt55
 wget https://vault.cs.uwaterloo.ca/s/G36Mjt55HWRSNRR/download -O mse-aops-2021.tar.gz
 tar xzf mse-aops-2021.tar.gz
 # cd to pya0 directory
-rm -f mse-aops-2021-data-v3.pkl mse-aops-2021-vocab-v3.pkl
-python -m pya0.mse-aops-2021 /path/to/corpus/ --num_tokenizer_ver=3
-python -m pya0.mse-aops-2021-train-data generate_sentpairs --docs_file ./mse-aops-2021-data-v3.pkl --condenser_mode=True
+python -m pya0.mse-aops-2021 /path/to/corpus/
+python -m pya0.mse-aops-2021-train-data generate_sentpairs --docs_file ./mse-aops-2021-data.pkl --condenser_mode=True
 ```
 
 Then, create a `shards.txt` and `test.txt` files to specify the training/testing sentence pairs.
@@ -264,7 +261,7 @@ Assume this data directory containing all the generated files is named `data.ABC
 ```sh
 export SLURM_JOB_ID=my_pretrain;
 python ./pya0/utils/transformer.py pretrain \
-	data.ABC/bert-base-uncased data.ABC/bert-tokenizer data.ABC/mse-aops-2021-vocab-v3.pkl \
+	data.ABC/bert-base-uncased data.ABC/bert-tokenizer data.ABC/mse-aops-2021-vocab.pkl \
 	--test_file data.ABC/test.txt --test_cycle 100 --shards_list data.ABC/shards.txt \
 	--batch_size $((38 * 3)) --save_fold 1 --epochs 10 \
 	--cluster tcp://127.0.0.1:8912 --dev_map 3,4,5
@@ -273,7 +270,7 @@ python ./pya0/utils/transformer.py pretrain \
 Another example of training a condenser architecture:
 ```sh
 python ./pya0/utils/transformer.py pretrain \
-	data.ABC/bert-base-uncased data.ABC/bert-tokenizer data.ABC/mse-aops-2021-vocab-v3.pkl \
+	data.ABC/bert-base-uncased data.ABC/bert-tokenizer data.ABC/mse-aops-2021-vocab.pkl \
 	--test_cycle 0 --shards_list data.ABC/shards.txt \
 	--batch_size $((32 * 3)) --save_fold 1 --epochs 10 \
 	--cluster tcp://127.0.0.1:8912 --dev_map 0,1,2 --architecture condenser
