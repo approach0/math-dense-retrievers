@@ -8,13 +8,13 @@ https://arxiv.org/abs/2203.11163v1
 
 ### Clone Repository
 ```shell
-git clone git@github.com:approach0/math-dense-retrievers.git math-dense-retrievers
+git clone -b emnlp git@github.com:approach0/math-dense-retrievers.git math-dense-retrievers
 cd math-dense-retrievers
 ```
 
 ### Data Download
 
-We have made our prebuilt-indexes (optional), experimenting models and corpus files available for download:
+We have made our prebuilt-indexes (optional), experiment and corpus files available separately:
 
 ```shell
 wget https://vault.cs.uwaterloo.ca/s/AFTWLbRdKSMBpsK/download -O prebuilt-indexes.tar
