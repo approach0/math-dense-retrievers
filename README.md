@@ -239,7 +239,7 @@ wget https://vault.cs.uwaterloo.ca/s/G36Mjt55HWRSNRR/download -O mse-aops-2021.t
 tar xzf mse-aops-2021.tar.gz
 # cd to pya0 directory
 python -m pya0.mse-aops-2021 /path/to/corpus/
-python -m pya0.mse-aops-2021-train-data generate_sentpairs --docs_file ./mse-aops-2021-data.pkl --condenser_mode=True
+python -m pya0.mse-aops-2021-train-data generate_sentpairs --docs_file ./mse-aops-2021-data.pkl
 ```
 
 Then, create a `shards.txt` and `test.txt` files to specify the training/testing sentence pairs.
@@ -249,10 +249,7 @@ To create `shards.txt`:
 ls *.pairs.* > shards.txt
 ```
 
-To create `test.txt`:
-```sh
-python -m pya0.transformer_utils pft_print ./tests/transformer_unmask.txt > test.txt
-```
+To create `test.txt`, copy it from existing training data.
 
 You may also need to copy the backbone model/tokenizer (e.g., `bert-base-uncased` and `bert-tokenizer`) to the data directory
 so that an offline training can be performed (useful in some Slurm environments).
@@ -265,13 +262,4 @@ python ./pya0/utils/transformer.py pretrain \
 	--test_file data.ABC/test.txt --test_cycle 100 --shards_list data.ABC/shards.txt \
 	--batch_size $((38 * 3)) --save_fold 1 --epochs 10 \
 	--cluster tcp://127.0.0.1:8912 --dev_map 3,4,5
-```
-
-Another example of training a condenser architecture:
-```sh
-python ./pya0/utils/transformer.py pretrain \
-	data.ABC/bert-base-uncased data.ABC/bert-tokenizer data.ABC/mse-aops-2021-vocab.pkl \
-	--test_cycle 0 --shards_list data.ABC/shards.txt \
-	--batch_size $((32 * 3)) --save_fold 1 --epochs 10 \
-	--cluster tcp://127.0.0.1:8912 --dev_map 0,1,2 --architecture condenser
 ```
