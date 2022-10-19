@@ -17,7 +17,7 @@ We have made our prebuilt-indexes (optional), experiment and corpus files availa
 
 ```shell
 wget https://vault.cs.uwaterloo.ca/s/AFTWLbRdKSMBpsK/download -O prebuilt-indexes.tar
-wget https://vault.cs.uwaterloo.ca/s/bPezoZHPi9fCBwb/download -O experiments.tar.gz
+wget https://vault.cs.uwaterloo.ca/s/Rw47YEmsFyJEMKY/download -O experiments.tar.gz
 wget https://vault.cs.uwaterloo.ca/s/q5tFQRf8RwZr7dW/download -O corpus.tar.gz
 ```
 
