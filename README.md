@@ -152,7 +152,8 @@ SEARCH='python -m pya0.transformer_eval search ./utils/transformer_eval.ini'
 $SEARCH search_ntcir12_dpr --device cpu
 ```
 
-The pre-existing run files under `experiments/runs` directory are what we have generated for reporting our results. Be aware that, by default, all newly generated run files will overwrite files under the `experiments/runs` directory. Also, for convenience, we put the official run files (can be downloaded [here](https://drive.google.com/drive/folders/1UOT4KwfCPvh4VveU65LFTUceumlnt7YO?usp=sharing)) from previous systems under: `experiments/runs/official`.
+The pre-existing run files under `experiments/runs` directory are what we have generated for reporting our results. Be aware that, by default, all newly generated run files will overwrite files under the `experiments/runs` directory.
+Also, for convenience, we put baseline run files (can be downloaded [here](https://drive.google.com/drive/folders/1UOT4KwfCPvh4VveU65LFTUceumlnt7YO?usp=sharing)) from previous systems under: `experiments/runs/baselines`.
 
 ### Evaluation
 
