@@ -4,7 +4,7 @@ This is the repository for replication of the experiments in our paper:
 
 Wei Zhong, Jheng-Hong Yang, and Jimmy Lin. *Evaluating Token-Level and Passage-Level Dense Retrieval Models for Math Information Retrieval*.
 
-https://arxiv.org/abs/2203.11163v1
+https://arxiv.org/pdf/2203.11163v2
 
 ### Clone Repository
 ```shell
